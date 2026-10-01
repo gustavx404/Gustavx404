@@ -44,7 +44,7 @@ const palettes = {
     windowTitle: "GUSTAVX404 // TTY 01",
     sync: "SYNC",
     command: "whoami",
-    name: "Gustav",
+    name: "Gustavo",
     role: "CYBERSECURITY  →  AI ENGINEERING",
     bio: "Building secure systems and exploring applied AI. Linux user since 2017.",
     skillsTitle: "01 // CORE SKILLS",
@@ -52,13 +52,13 @@ const palettes = {
     metricsTitle: "02 // GITHUB SIGNAL",
     metricLabels: ["PUBLIC REPOSITORIES", "PROJECT STARS", "FOLLOWERS", "MEMBER SINCE"],
     metricUnit: "// TOTAL",
-    footer: "CONTACT // LINKEDIN · TRYHACKME",
+    footer: "CONNECT  LINKEDIN · TRYHACKME     |     LOCALE  EN · PT-BR",
   },
   "pt-BR": {
     windowTitle: "GUSTAVX404 // TTY 01",
     sync: "SINCRONIA",
     command: "whoami",
-    name: "Gustav",
+    name: "Gustavo",
     role: "CIBERSEGURANÇA  →  ENGENHARIA DE IA",
     bio: "Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017.",
     skillsTitle: "01 // HABILIDADES-CHAVE",
@@ -66,7 +66,7 @@ const palettes = {
     metricsTitle: "02 // SINAIS DO GITHUB",
     metricLabels: ["REPOSITÓRIOS PÚBLICOS", "ESTRELAS NOS PROJETOS", "SEGUIDORES", "MEMBRO DESDE"],
     metricUnit: "// TOTAL",
-    footer: "CONTATO // LINKEDIN · TRYHACKME",
+    footer: "CONTATO  LINKEDIN · TRYHACKME     |     IDIOMA  EN · PT-BR",
   },
 };
 
@@ -89,22 +89,23 @@ function createScreen(data, locale) {
     data.joinedYear,
   ];
   const positions = [12, 213, 414, 615];
+  const connectLabel = locale === "en" ? "CONNECT" : "CONTATO";
   const skills = copy.skills.map((skill, index) => {
     const x = positions[index];
-    const accent = index % 2 === 0 ? "#ffbd4a" : "#b8f56b";
+    const accent = index % 2 === 0 ? "#ff4d5a" : "#ff9b54";
     return `
       <g transform="translate(${x} 204)">
-        <rect width="193" height="40" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect width="193" height="40" rx="6" fill="#171416" stroke="#493238"/>
         <rect x="12" y="14" width="4" height="12" fill="${accent}"/>
         <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ ${escapeXml(skill)} ]</text>
       </g>`.trim();
   }).join("\n  ");
   const metrics = values.map((value, index) => {
     const x = positions[index];
-    const accent = index % 2 === 0 ? "#ffbd4a" : "#b8f56b";
+    const accent = index % 2 === 0 ? "#ff4d5a" : "#ff9b54";
     return `
       <g transform="translate(${x} 285)">
-        <rect width="193" height="64" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect width="193" height="64" rx="6" fill="#171416" stroke="#493238"/>
         <rect x="12" y="13" width="4" height="10" fill="${accent}"/>
         <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">${escapeXml(copy.metricLabels[index])}</text>
         <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">${escapeXml(value)}</text>
@@ -112,29 +113,36 @@ function createScreen(data, locale) {
       </g>`.trim();
   }).join("\n  ");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="820" height="380" viewBox="0 0 820 380" role="img" aria-labelledby="title desc">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 380" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)} · ${escapeXml(copy.name)}</title>
   <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bio)} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}.</desc>
-  <rect width="820" height="380" rx="8" fill="#0b0e0d"/>
-  <rect x="1" y="1" width="818" height="378" rx="7" fill="none" stroke="#303a34"/>
-  <path d="M8 31h804" stroke="#303a34"/>
-  <circle cx="17" cy="16" r="3" fill="#ffbd4a"/>
-  <circle cx="29" cy="16" r="3" fill="#b8f56b"/>
+  <rect width="820" height="380" rx="8" fill="#0d0b0c"/>
+  <rect x="1" y="1" width="818" height="378" rx="7" fill="none" stroke="#382b30"/>
+  <path d="M8 31h804" stroke="#382b30"/>
+  <circle cx="17" cy="16" r="3" fill="#ff4d5a"/>
+  <circle cx="29" cy="16" r="3" fill="#ff9b54"/>
   <circle cx="41" cy="16" r="3" fill="#58645d"/>
   <text x="55" y="20" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1">${escapeXml(copy.windowTitle)}</text>
-  <text x="805" y="20" fill="#ffbd4a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing=".5">${escapeXml(copy.sync)}: ${escapeXml(data.updatedAt)}</text>
-  <text x="15" y="58" fill="#b8f56b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">gustavx404@workstation:~$ ${escapeXml(copy.command)}</text>
-  <rect x="237" y="47" width="7" height="13" rx="1" fill="#b8f56b" opacity=".8"/>
+  <text x="805" y="20" fill="#ff4d5a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing=".5">${escapeXml(copy.sync)}: ${escapeXml(data.updatedAt)}</text>
+  <text x="15" y="58" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">gustavx404@workstation:~$ ${escapeXml(copy.command)}</text>
+  <rect x="237" y="47" width="7" height="13" rx="1" fill="#ff4d5a" opacity=".8"/>
   <text x="15" y="99" fill="#f0f3ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" font-weight="700">${escapeXml(copy.name)}</text>
-  <text x="15" y="124" fill="#ffbd4a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600" letter-spacing=".5">${escapeXml(copy.role)}</text>
+  <text x="15" y="124" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600" letter-spacing=".5">${escapeXml(copy.role)}</text>
   <text x="15" y="151" fill="#b4beb6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">${escapeXml(copy.bio)}</text>
-  <path d="M15 170h790" stroke="#303a34"/>
-  <text x="15" y="192" fill="#ffbd4a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.skillsTitle)}</text>
+  <path d="M15 170h790" stroke="#382b30"/>
+  <text x="15" y="192" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.skillsTitle)}</text>
   ${skills}
-  <text x="15" y="273" fill="#ffbd4a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.metricsTitle)}</text>
+  <text x="15" y="273" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
-  <path d="M15 363h790" stroke="#303a34"/>
-  <text x="15" y="374" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="7" letter-spacing=".35">${escapeXml(copy.footer)}</text>
+  <path d="M15 363h790" stroke="#382b30"/>
+  <text x="15" y="375" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700" letter-spacing=".4">${connectLabel}</text>
+  <a href="https://www.linkedin.com/in/gustavx404/" aria-label="LinkedIn"><text x="105" y="375" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">LINKEDIN</text></a>
+  <text x="158" y="375" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">·</text>
+  <a href="https://tryhackme.com/p/Gustavx404" aria-label="TryHackMe"><text x="173" y="375" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">TRYHACKME</text></a>
+  <text x="250" y="375" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">|</text>
+  <a href="https://github.com/gustavx404/Gustavx404/blob/main/README.md" aria-label="English"><text x="266" y="375" fill="${locale === "en" ? "#ff4d5a" : "#94a197"}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">EN</text></a>
+  <text x="286" y="375" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">·</text>
+  <a href="https://github.com/gustavx404/Gustavx404/blob/main/README.pt-BR.md" aria-label="Português brasileiro"><text x="300" y="375" fill="${locale === "pt-BR" ? "#ff4d5a" : "#94a197"}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">PT-BR</text></a>
 </svg>
 `;
 }
