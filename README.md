@@ -1,15 +1,5 @@
-# Gustav · `@Gustavx404`
+<p align="center"><code>$ locale</code> · <a href="README.md">EN</a> · <a href="README.pt-BR.md">PT-BR</a></p>
 
-[English](README.md) · [Português (Brasil)](README.pt-BR.md)
+<p align="center"><img src="assets/profile-screen.en.svg" alt="Gustav's retro terminal profile: cybersecurity, AI engineering, Linux since 2017, 3D printing, and GitHub metrics." /></p>
 
-![Cybersecurity, AI engineering, Linux since 2017, and 3D printing](assets/profile-badges.en.svg)
-
-**Cybersecurity → AI engineering**
-
-I build practical tools, explore secure systems, and have used Linux since 2017.
-
-![Daily profile metrics: public repositories, stars, followers, and GitHub member since](assets/profile-metrics.en.svg)
-
-`$ connect --linkedin --tryhackme`
-
-[LinkedIn](https://www.linkedin.com/in/gustavx404/) · [TryHackMe](https://tryhackme.com/p/Gustavx404)
+<p align="center"><code>$ connect</code> · <a href="https://www.linkedin.com/in/gustavx404/">LinkedIn</a> · <a href="https://tryhackme.com/p/Gustavx404">TryHackMe</a></p>

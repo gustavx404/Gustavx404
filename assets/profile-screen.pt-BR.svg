@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="380" viewBox="0 0 820 380" role="img" aria-labelledby="title desc">
+  <title id="title">GUSTAVX404 // TTY 01 · Gustav</title>
+  <desc id="desc">CIBERSEGURANÇA  →  ENGENHARIA DE IA. Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017. 02 // SINAIS DO GITHUB: REPOSITÓRIOS PÚBLICOS 18 · ESTRELAS NOS PROJETOS 8 · SEGUIDORES 20 · MEMBRO DESDE 2018.</desc>
+  <rect width="820" height="380" rx="8" fill="#0b0e0d"/>
+  <rect x="1" y="1" width="818" height="378" rx="7" fill="none" stroke="#303a34"/>
+  <path d="M8 31h804" stroke="#303a34"/>
+  <circle cx="17" cy="16" r="3" fill="#ffbd4a"/>
+  <circle cx="29" cy="16" r="3" fill="#b8f56b"/>
+  <circle cx="41" cy="16" r="3" fill="#58645d"/>
+  <text x="55" y="20" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1">GUSTAVX404 // TTY 01</text>
+  <text x="805" y="20" fill="#ffbd4a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing=".5">SINCRONIA: 2026-10-01</text>
+  <text x="15" y="58" fill="#b8f56b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">gustavx404@workstation:~$ whoami</text>
+  <rect x="237" y="47" width="7" height="13" rx="1" fill="#b8f56b" opacity=".8"/>
+  <text x="15" y="99" fill="#f0f3ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" font-weight="700">Gustav</text>
+  <text x="15" y="124" fill="#ffbd4a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600" letter-spacing=".5">CIBERSEGURANÇA  →  ENGENHARIA DE IA</text>
+  <text x="15" y="151" fill="#b4beb6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017.</text>
+  <path d="M15 170h790" stroke="#303a34"/>
+  <text x="15" y="192" fill="#ffbd4a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">01 // HABILIDADES-CHAVE</text>
+  <g transform="translate(12 204)">
+        <rect width="193" height="40" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="14" width="4" height="12" fill="#ffbd4a"/>
+        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ CIBERSEGURANÇA ]</text>
+      </g>
+  <g transform="translate(213 204)">
+        <rect width="193" height="40" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="14" width="4" height="12" fill="#b8f56b"/>
+        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ ENGENHARIA DE IA ]</text>
+      </g>
+  <g transform="translate(414 204)">
+        <rect width="193" height="40" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="14" width="4" height="12" fill="#ffbd4a"/>
+        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ LINUX · 2017+ ]</text>
+      </g>
+  <g transform="translate(615 204)">
+        <rect width="193" height="40" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="14" width="4" height="12" fill="#b8f56b"/>
+        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ IMPRESSÃO 3D ]</text>
+      </g>
+  <text x="15" y="273" fill="#ffbd4a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">02 // SINAIS DO GITHUB</text>
+  <g transform="translate(12 285)">
+        <rect width="193" height="64" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="13" width="4" height="10" fill="#ffbd4a"/>
+        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">REPOSITÓRIOS PÚBLICOS</text>
+        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">18</text>
+        <text x="179" y="51" fill="#ffbd4a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+      </g>
+  <g transform="translate(213 285)">
+        <rect width="193" height="64" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="13" width="4" height="10" fill="#b8f56b"/>
+        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">ESTRELAS NOS PROJETOS</text>
+        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">8</text>
+        <text x="179" y="51" fill="#b8f56b" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+      </g>
+  <g transform="translate(414 285)">
+        <rect width="193" height="64" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="13" width="4" height="10" fill="#ffbd4a"/>
+        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">SEGUIDORES</text>
+        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">20</text>
+        <text x="179" y="51" fill="#ffbd4a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+      </g>
+  <g transform="translate(615 285)">
+        <rect width="193" height="64" rx="3" fill="#151b17" stroke="#39473d"/>
+        <rect x="12" y="13" width="4" height="10" fill="#b8f56b"/>
+        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">MEMBRO DESDE</text>
+        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">2018</text>
+        <text x="179" y="51" fill="#b8f56b" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+      </g>
+  <path d="M15 363h790" stroke="#303a34"/>
+  <text x="15" y="374" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="7" letter-spacing=".35">CONTATO // LINKEDIN · TRYHACKME</text>
+</svg>

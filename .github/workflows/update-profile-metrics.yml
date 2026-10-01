@@ -1,4 +1,4 @@
-name: Update profile metrics
+name: Update profile screen
 
 on:
   schedule:
@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
-      - name: Generate localized profile metrics
-        run: node scripts/update-profile-metrics.mjs
+      - name: Generate localized profile screens
+        run: node scripts/update-profile-screen.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Commit updated SVGs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/profile-metrics.en.svg assets/profile-metrics.pt-BR.svg
+          git add assets/profile-screen.en.svg assets/profile-screen.pt-BR.svg
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh profile metrics"
             git push

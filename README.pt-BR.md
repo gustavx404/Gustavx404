@@ -1,15 +1,5 @@
-# Gustav · `@Gustavx404`
+<p align="center"><code>$ idioma</code> · <a href="README.md">EN</a> · <a href="README.pt-BR.md">PT-BR</a></p>
 
-[English](README.md) · [Português (Brasil)](README.pt-BR.md)
+<p align="center"><img src="assets/profile-screen.pt-BR.svg" alt="Perfil retrô de Gustav em um terminal: cibersegurança, engenharia de IA, Linux desde 2017, impressão 3D e métricas do GitHub." /></p>
 
-![Cibersegurança, engenharia de IA, Linux desde 2017 e impressão 3D](assets/profile-badges.pt-BR.svg)
-
-**Cibersegurança → engenharia de IA**
-
-Trabalho com cibersegurança, estou me especializando em engenharia de IA e uso Linux desde 2017.
-
-![Métricas diárias do perfil: repositórios públicos, estrelas, seguidores e ano de entrada no GitHub](assets/profile-metrics.pt-BR.svg)
-
-`$ conectar --linkedin --tryhackme`
-
-[LinkedIn](https://www.linkedin.com/in/gustavx404/) · [TryHackMe](https://tryhackme.com/p/Gustavx404)
+<p align="center"><code>$ conectar</code> · <a href="https://www.linkedin.com/in/gustavx404/">LinkedIn</a> · <a href="https://tryhackme.com/p/Gustavx404">TryHackMe</a></p>
