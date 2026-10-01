@@ -1,95 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 387" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 304" role="img" aria-labelledby="title desc">
   <title id="title">GUSTAVX404 // PERFIL</title>
-  <desc id="desc">ENGENHARIA DE IA · CIBERSEGURANÇA. Desenvolvo software com IA como engenheiro: projeto, implemento, testo e valido. Red team · Linux desde 2017 · Sempre explorando tecnologia. 02 // SINAIS DO GITHUB: REPOSITÓRIOS PÚBLICOS 18 · ESTRELAS NOS PROJETOS 8 · SEGUIDORES 20 · MEMBRO DESDE 2018. 03 // REPOSITÓRIOS EM DESTAQUE: .dotfiles, 2 estrelas · homelab, 1 estrelas · Estudos, 1 estrelas.</desc>
-  <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0d1017"/>
-      <stop offset=".55" stop-color="#171319"/>
-      <stop offset="1" stop-color="#211318"/>
-    </linearGradient>
-    <linearGradient id="glass-surface" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".105"/>
-      <stop offset="1" stop-color="#ff5266" stop-opacity=".045"/>
-    </linearGradient>
-    <radialGradient id="ambient-glow">
-      <stop offset="0" stop-color="#ff294f" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="panel-clip">
-      <rect x="1" y="1" width="818" height="385" rx="21"/>
-    </clipPath>
-  </defs>
-  <rect width="820" height="387" rx="22" fill="url(#background)"/>
-  <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)" clip-path="url(#panel-clip)"/>
-  <rect x="1" y="1" width="818" height="385" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
-  <circle cx="29" cy="28" r="4" fill="#ff5266"/>
+  <desc id="desc">ESTUDANTE · EM BUSCA DE VAGA. Interesse em software, IA e cibersegurança · Linux desde 2017. GITHUB: REPOS 18 · ESTRELAS 8 · SEGUIDORES 20 · DESDE 2018. PROJETOS EM DESTAQUE: .dotfiles, 2 estrelas · homelab, 1 estrelas · Estudos, 1 estrelas.</desc>
+  <rect width="820" height="304" rx="18" fill="#101116"/>
+  <rect x="1" y="1" width="818" height="302" rx="17" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <circle cx="29" cy="28" r="4" fill="#ff5266" opacity="1"/>
   <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
   <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">SINCRONIA · 2026-10-01</text>
-  <text x="28" y="75" fill="#ff9b72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" font-weight="650" letter-spacing=".2">ENGENHARIA DE IA · CIBERSEGURANÇA</text>
-  <text x="28" y="102" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">Desenvolvo software com IA como engenheiro: projeto, implemento, testo e valido.</text>
-  <text x="28" y="121" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">Red team · Linux desde 2017 · Sempre explorando tecnologia.</text>
-  <path d="M28 138h764" stroke="#ffffff" stroke-opacity=".12"/>
-  <g><circle cx="28" cy="138" r="11" fill="#ff5266" opacity=".12"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/></circle><circle cx="28" cy="138" r="3" fill="#ff5266"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="2s" repeatCount="indefinite"/></circle></g>
-  <text x="28" y="160" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">01 // ÁREAS DE FOCO</text>
-  <g transform="translate(28 168)">
-        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <circle cx="18" cy="24" r="4" fill="#ff5266"/>
-        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">ENGENHARIA DE IA</text>
+  <text x="28" y="78" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="19" font-weight="650" letter-spacing="-.3">ESTUDANTE · EM BUSCA DE VAGA</text>
+  <text x="28" y="103" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">Interesse em software, IA e cibersegurança · Linux desde 2017.</text>
+  <path d="M28 126h764" stroke="#ffffff" stroke-opacity=".12"/>
+  <text x="28" y="148" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing="1">GITHUB</text>
+  <g transform="translate(28 157)">
+        <rect width="179" height="54" rx="10" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="18" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="500" letter-spacing=".5">REPOS</text>
+        <text x="12" y="43" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="650" font-variant-numeric="tabular-nums">18</text>
       </g>
-  <g transform="translate(223 168)">
-        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <circle cx="18" cy="24" r="4" fill="#ff9b72"/>
-        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">IA NO DESENVOLVIMENTO</text>
+  <g transform="translate(223 157)">
+        <rect width="179" height="54" rx="10" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="18" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="500" letter-spacing=".5">ESTRELAS</text>
+        <text x="12" y="43" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="650" font-variant-numeric="tabular-nums">8</text>
       </g>
-  <g transform="translate(418 168)">
-        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <circle cx="18" cy="24" r="4" fill="#ff5266"/>
-        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">RED TEAM</text>
+  <g transform="translate(418 157)">
+        <rect width="179" height="54" rx="10" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="18" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="500" letter-spacing=".5">SEGUIDORES</text>
+        <text x="12" y="43" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="650" font-variant-numeric="tabular-nums">20</text>
       </g>
-  <g transform="translate(613 168)">
-        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <circle cx="18" cy="24" r="4" fill="#ff9b72"/>
-        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">LINUX · 2017+</text>
+  <g transform="translate(613 157)">
+        <rect width="179" height="54" rx="10" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="18" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="500" letter-spacing=".5">DESDE</text>
+        <text x="12" y="43" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="650" font-variant-numeric="tabular-nums">2018</text>
       </g>
-  <text x="28" y="241" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">02 // SINAIS DO GITHUB</text>
-  <g transform="translate(28 250)">
-        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">REPOSITÓRIOS PÚBLICOS</text>
-        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">18</text>
-        <circle cx="162" cy="48" r="3" fill="#ff5266"/>
+  <text x="28" y="237" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing="1">PROJETOS EM DESTAQUE</text>
+  <g transform="translate(28 248)">
+        <rect width="248" height="30" rx="8" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="19" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="550">.dotfiles</text>
+        <text x="235" y="19" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="650">★ 2</text>
       </g>
-  <g transform="translate(223 250)">
-        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">ESTRELAS NOS PROJETOS</text>
-        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">8</text>
-        <circle cx="162" cy="48" r="3" fill="#ff9b72"/>
+  <g transform="translate(286 248)">
+        <rect width="248" height="30" rx="8" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="19" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="550">homelab</text>
+        <text x="235" y="19" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="650">★ 1</text>
       </g>
-  <g transform="translate(418 250)">
-        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">SEGUIDORES</text>
-        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">20</text>
-        <circle cx="162" cy="48" r="3" fill="#ff5266"/>
-      </g>
-  <g transform="translate(613 250)">
-        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">MEMBRO DESDE</text>
-        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">2018</text>
-        <circle cx="162" cy="48" r="3" fill="#ff9b72"/>
-      </g>
-  <text x="28" y="331" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">03 // REPOSITÓRIOS EM DESTAQUE</text>
-  <g transform="translate(28 341)">
-        <rect width="248" height="32" rx="10" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="12" y="20" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">.dotfiles</text>
-        <text x="235" y="20" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700">★ 2</text>
-      </g>
-  <g transform="translate(286 341)">
-        <rect width="248" height="32" rx="10" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="12" y="20" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">homelab</text>
-        <text x="235" y="20" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700">★ 1</text>
-      </g>
-  <g transform="translate(544 341)">
-        <rect width="248" height="32" rx="10" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
-        <text x="12" y="20" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">Estudos</text>
-        <text x="235" y="20" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700">★ 1</text>
+  <g transform="translate(544 248)">
+        <rect width="248" height="30" rx="8" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
+        <text x="12" y="19" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="550">Estudos</text>
+        <text x="235" y="19" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="650">★ 1</text>
       </g>
 </svg>
