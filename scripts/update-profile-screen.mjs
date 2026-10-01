@@ -39,6 +39,11 @@ async function getProfileData() {
   return {
     repositoryCount: user.public_repos,
     starCount: repos.filter((repo) => !repo.fork).reduce((sum, repo) => sum + repo.stargazers_count, 0),
+    topRepositories: repos
+      .filter((repo) => !repo.fork)
+      .sort((first, second) => second.stargazers_count - first.stargazers_count)
+      .slice(0, 3)
+      .map((repo) => ({ name: repo.name, stars: repo.stargazers_count })),
     followerCount: user.followers,
     joinedYear: new Date(user.created_at).getUTCFullYear(),
     updatedAt: new Date().toISOString().slice(0, 10),
@@ -59,6 +64,8 @@ const palettes = {
     skills: ["AI ENGINEERING", "AI-ASSISTED DEV", "RED TEAM", "LINUX · 2017+"],
     metricsTitle: "02 // GITHUB SIGNAL",
     metricLabels: ["PUBLIC REPOSITORIES", "PROJECT STARS", "FOLLOWERS", "MEMBER SINCE"],
+    topRepositoriesTitle: "03 // TOP REPOSITORIES",
+    starLabel: "stars",
   },
   "pt-BR": {
     windowTitle: "GUSTAVX404 // PERFIL",
@@ -73,6 +80,8 @@ const palettes = {
     skills: ["ENGENHARIA DE IA", "IA NO DESENVOLVIMENTO", "RED TEAM", "LINUX · 2017+"],
     metricsTitle: "02 // SINAIS DO GITHUB",
     metricLabels: ["REPOSITÓRIOS PÚBLICOS", "ESTRELAS NOS PROJETOS", "SEGUIDORES", "MEMBRO DESDE"],
+    topRepositoriesTitle: "03 // REPOSITÓRIOS EM DESTAQUE",
+    starLabel: "estrelas",
   },
 };
 
@@ -119,14 +128,24 @@ function createScreen(data, locale, animationProgress = null) {
         <circle cx="162" cy="48" r="3" fill="${accent}"/>
       </g>`.trim();
   }).join("\n  ");
+  const topRepositories = data.topRepositories.map((repo, index) => {
+    const x = [28, 286, 544][index];
+    const name = repo.name.length > 22 ? `${repo.name.slice(0, 21)}…` : repo.name;
+    return `
+      <g transform="translate(${x} 364)">
+        <rect width="248" height="32" rx="10" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <text x="12" y="20" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">${escapeXml(name)}</text>
+        <text x="235" y="20" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700">★ ${escapeXml(repo.stars)}</text>
+      </g>`.trim();
+  }).join("\n  ");
 
   const scanIndicator = animationProgress === null
     ? `<g><circle cx="28" cy="161" r="11" fill="#ff5266" opacity=".12"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/></circle><circle cx="28" cy="161" r="3" fill="#ff5266"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="2s" repeatCount="indefinite"/></circle></g>`
     : `<g><circle cx="${scanX.toFixed(1)}" cy="161" r="11" fill="#ff5266" opacity="${(Number(scanOpacity) * 0.14).toFixed(2)}"/><circle cx="${scanX.toFixed(1)}" cy="161" r="3" fill="#ff5266" opacity="${scanOpacity}"/></g>`;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 360" role="img" aria-labelledby="title desc">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 410" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)}</title>
-  <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bioLines.join(" "))} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}.</desc>
+  <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bioLines.join(" "))} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}. ${escapeXml(copy.topRepositoriesTitle)}: ${escapeXml(data.topRepositories.map((repo) => `${repo.name}, ${repo.stars} ${copy.starLabel}`).join(" · "))}.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1017"/>
@@ -142,12 +161,12 @@ function createScreen(data, locale, animationProgress = null) {
       <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="panel-clip">
-      <rect x="1" y="1" width="818" height="358" rx="21"/>
+      <rect x="1" y="1" width="818" height="408" rx="21"/>
     </clipPath>
   </defs>
-  <rect width="820" height="360" rx="22" fill="url(#background)"/>
+  <rect width="820" height="410" rx="22" fill="url(#background)"/>
   <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)" clip-path="url(#panel-clip)"/>
-  <rect x="1" y="1" width="818" height="358" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <rect x="1" y="1" width="818" height="408" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
   <circle cx="29" cy="28" r="4" fill="#ff5266"/>
   <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
   <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">${escapeXml(copy.sync)} · ${escapeXml(data.updatedAt)}</text>
@@ -161,6 +180,8 @@ function createScreen(data, locale, animationProgress = null) {
   ${skills}
   <text x="28" y="264" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
+  <text x="28" y="354" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.topRepositoriesTitle)}</text>
+  ${topRepositories}
 </svg>
 `;
 }
@@ -180,7 +201,7 @@ for (const locale of Object.keys(palettes)) {
       const frameSvg = join(frameDirectory, `frame-${String(frame).padStart(2, "0")}.svg`);
       const framePng = join(frameDirectory, `frame-${String(frame).padStart(2, "0")}.png`);
       await writeFile(frameSvg, createScreen(data, locale, progress));
-      await execFileAsync("rsvg-convert", ["--width", "1640", "--height", "720", frameSvg, "--output", framePng]);
+      await execFileAsync("rsvg-convert", ["--width", "1640", "--height", "820", frameSvg, "--output", framePng]);
       frames.push(framePng);
     }
     const gifFilename = `assets/profile-motion.${locale}.gif`;
