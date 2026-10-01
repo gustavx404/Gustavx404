@@ -137,7 +137,7 @@ function createScreen(data, locale) {
 
 const data = await getProfileData();
 for (const locale of Object.keys(palettes)) {
-  const filename = `assets/profile-screen.${locale}.svg`;
+  const filename = `assets/profile-screen-v2.${locale}.svg`;
   await writeFile(filename, createScreen(data, locale));
   process.stdout.write(`Updated ${filename}\n`);
 }
