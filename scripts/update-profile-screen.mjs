@@ -54,7 +54,6 @@ const palettes = {
   en: {
     windowTitle: "GUSTAVX404 // PROFILE",
     sync: "SYNC",
-    heroLabel: "AI ENGINEER · RED TEAM",
     role: "AI ENGINEER · CYBERSECURITY",
     bioLines: [
       "AI is my engineering tool: I design, implement, test and validate software.",
@@ -70,7 +69,6 @@ const palettes = {
   "pt-BR": {
     windowTitle: "GUSTAVX404 // PERFIL",
     sync: "SINCRONIA",
-    heroLabel: "ENGENHEIRO DE IA · RED TEAM",
     role: "ENGENHARIA DE IA · CIBERSEGURANÇA",
     bioLines: [
       "Desenvolvo software com IA como engenheiro: projeto, implemento, testo e valido.",
@@ -111,7 +109,7 @@ function createScreen(data, locale, animationProgress = null) {
     const x = positions[index];
     const accent = accents[index % accents.length];
     return `
-      <g transform="translate(${x} 191)">
+      <g transform="translate(${x} 168)">
         <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
         <circle cx="18" cy="24" r="4" fill="${accent}"/>
         <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">${escapeXml(skill)}</text>
@@ -121,7 +119,7 @@ function createScreen(data, locale, animationProgress = null) {
     const x = positions[index];
     const accent = accents[index % accents.length];
     return `
-      <g transform="translate(${x} 273)">
+      <g transform="translate(${x} 250)">
         <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
         <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">${escapeXml(copy.metricLabels[index])}</text>
         <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">${escapeXml(value)}</text>
@@ -132,7 +130,7 @@ function createScreen(data, locale, animationProgress = null) {
     const x = [28, 286, 544][index];
     const name = repo.name.length > 22 ? `${repo.name.slice(0, 21)}…` : repo.name;
     return `
-      <g transform="translate(${x} 364)">
+      <g transform="translate(${x} 341)">
         <rect width="248" height="32" rx="10" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
         <text x="12" y="20" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">${escapeXml(name)}</text>
         <text x="235" y="20" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700">★ ${escapeXml(repo.stars)}</text>
@@ -140,10 +138,10 @@ function createScreen(data, locale, animationProgress = null) {
   }).join("\n  ");
 
   const scanIndicator = animationProgress === null
-    ? `<g><circle cx="28" cy="161" r="11" fill="#ff5266" opacity=".12"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/></circle><circle cx="28" cy="161" r="3" fill="#ff5266"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="2s" repeatCount="indefinite"/></circle></g>`
-    : `<g><circle cx="${scanX.toFixed(1)}" cy="161" r="11" fill="#ff5266" opacity="${(Number(scanOpacity) * 0.14).toFixed(2)}"/><circle cx="${scanX.toFixed(1)}" cy="161" r="3" fill="#ff5266" opacity="${scanOpacity}"/></g>`;
+    ? `<g><circle cx="28" cy="138" r="11" fill="#ff5266" opacity=".12"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/></circle><circle cx="28" cy="138" r="3" fill="#ff5266"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="2s" repeatCount="indefinite"/></circle></g>`
+    : `<g><circle cx="${scanX.toFixed(1)}" cy="138" r="11" fill="#ff5266" opacity="${(Number(scanOpacity) * 0.14).toFixed(2)}"/><circle cx="${scanX.toFixed(1)}" cy="138" r="3" fill="#ff5266" opacity="${scanOpacity}"/></g>`;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 410" role="img" aria-labelledby="title desc">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 387" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)}</title>
   <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bioLines.join(" "))} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}. ${escapeXml(copy.topRepositoriesTitle)}: ${escapeXml(data.topRepositories.map((repo) => `${repo.name}, ${repo.stars} ${copy.starLabel}`).join(" · "))}.</desc>
   <defs>
@@ -161,26 +159,25 @@ function createScreen(data, locale, animationProgress = null) {
       <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="panel-clip">
-      <rect x="1" y="1" width="818" height="408" rx="21"/>
+      <rect x="1" y="1" width="818" height="385" rx="21"/>
     </clipPath>
   </defs>
-  <rect width="820" height="410" rx="22" fill="url(#background)"/>
+  <rect width="820" height="387" rx="22" fill="url(#background)"/>
   <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)" clip-path="url(#panel-clip)"/>
-  <rect x="1" y="1" width="818" height="408" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <rect x="1" y="1" width="818" height="385" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
   <circle cx="29" cy="28" r="4" fill="#ff5266"/>
   <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
   <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">${escapeXml(copy.sync)} · ${escapeXml(data.updatedAt)}</text>
-  <text x="28" y="75" fill="#ff5266" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4">${escapeXml(copy.heroLabel)}</text>
-  <text x="28" y="98" fill="#ff9b72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" font-weight="650" letter-spacing=".2">${escapeXml(copy.role)}</text>
-  <text x="28" y="125" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bioLines[0])}</text>
-  <text x="28" y="144" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bioLines[1])}</text>
-  <path d="M28 161h764" stroke="#ffffff" stroke-opacity=".12"/>
+  <text x="28" y="75" fill="#ff9b72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" font-weight="650" letter-spacing=".2">${escapeXml(copy.role)}</text>
+  <text x="28" y="102" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bioLines[0])}</text>
+  <text x="28" y="121" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bioLines[1])}</text>
+  <path d="M28 138h764" stroke="#ffffff" stroke-opacity=".12"/>
   ${scanIndicator}
-  <text x="28" y="183" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.skillsTitle)}</text>
+  <text x="28" y="160" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.skillsTitle)}</text>
   ${skills}
-  <text x="28" y="264" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.metricsTitle)}</text>
+  <text x="28" y="241" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
-  <text x="28" y="354" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.topRepositoriesTitle)}</text>
+  <text x="28" y="331" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.topRepositoriesTitle)}</text>
   ${topRepositories}
 </svg>
 `;
@@ -201,7 +198,7 @@ for (const locale of Object.keys(palettes)) {
       const frameSvg = join(frameDirectory, `frame-${String(frame).padStart(2, "0")}.svg`);
       const framePng = join(frameDirectory, `frame-${String(frame).padStart(2, "0")}.png`);
       await writeFile(frameSvg, createScreen(data, locale, progress));
-      await execFileAsync("rsvg-convert", ["--width", "1640", "--height", "820", frameSvg, "--output", framePng]);
+      await execFileAsync("rsvg-convert", ["--width", "1640", "--height", "774", frameSvg, "--output", framePng]);
       frames.push(framePng);
     }
     const gifFilename = `assets/profile-motion.${locale}.gif`;
