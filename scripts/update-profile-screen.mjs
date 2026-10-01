@@ -1,4 +1,10 @@
-import { writeFile } from "node:fs/promises";
+import { copyFile, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { promisify } from "node:util";
+
+const execFileAsync = promisify(execFile);
 
 const username = "gustavx404";
 const apiBase = "https://api.github.com";
@@ -44,11 +50,14 @@ const palettes = {
     windowTitle: "GUSTAVX404 // PROFILE",
     sync: "SYNC",
     name: "Gustavo",
-    heroLabel: "RED TEAM · ADVERSARY SIM",
-    role: "CYBERSECURITY  →  AI ENGINEERING",
-    bio: "Exploring adversary simulation and AI security. Linux user since 2017.",
+    heroLabel: "AI ENGINEER · RED TEAM",
+    role: "AI ENGINEER · CYBERSECURITY",
+    bioLines: [
+      "AI is my engineering tool: I design, implement, test and validate software.",
+      "Red-team security · Linux since 2017 · Always exploring technology.",
+    ],
     skillsTitle: "01 // FOCUS AREAS",
-    skills: ["RED TEAM", "AI SECURITY", "LINUX · 2017+", "3D PRINTING"],
+    skills: ["AI ENGINEERING", "AI-ASSISTED DEV", "RED TEAM", "LINUX · 2017+"],
     metricsTitle: "02 // GITHUB SIGNAL",
     metricLabels: ["PUBLIC REPOSITORIES", "PROJECT STARS", "FOLLOWERS", "MEMBER SINCE"],
   },
@@ -56,11 +65,14 @@ const palettes = {
     windowTitle: "GUSTAVX404 // PERFIL",
     sync: "SINCRONIA",
     name: "Gustavo",
-    heroLabel: "RED TEAM · SIMULAÇÃO DE ATAQUE",
-    role: "CIBERSEGURANÇA  →  ENGENHARIA DE IA",
-    bio: "Exploro simulação de adversários e segurança em IA. Uso Linux desde 2017.",
+    heroLabel: "ENGENHEIRO DE IA · RED TEAM",
+    role: "ENGENHARIA DE IA · CIBERSEGURANÇA",
+    bioLines: [
+      "Desenvolvo software com IA como engenheiro: projeto, implemento, testo e valido.",
+      "Red team · Linux desde 2017 · Sempre explorando tecnologia.",
+    ],
     skillsTitle: "01 // ÁREAS DE FOCO",
-    skills: ["RED TEAM", "SEGURANÇA EM IA", "LINUX · 2017+", "IMPRESSÃO 3D"],
+    skills: ["ENGENHARIA DE IA", "IA NO DESENVOLVIMENTO", "RED TEAM", "LINUX · 2017+"],
     metricsTitle: "02 // SINAIS DO GITHUB",
     metricLabels: ["REPOSITÓRIOS PÚBLICOS", "ESTRELAS NOS PROJETOS", "SEGUIDORES", "MEMBRO DESDE"],
   },
@@ -76,7 +88,7 @@ function escapeXml(value) {
   })[char]);
 }
 
-function createScreen(data, locale) {
+function createScreen(data, locale, animationProgress = null) {
   const copy = palettes[locale];
   const values = [
     data.repositoryCount,
@@ -86,11 +98,13 @@ function createScreen(data, locale) {
   ];
   const positions = [28, 223, 418, 613];
   const accents = ["#ff5266", "#ff9b72"];
+  const scanOpacity = animationProgress === null ? null : (0.45 + 0.55 * Math.sin(Math.PI * animationProgress)).toFixed(2);
+  const scanX = animationProgress === null ? 28 : 28 + (764 * animationProgress);
   const skills = copy.skills.map((skill, index) => {
     const x = positions[index];
     const accent = accents[index % accents.length];
     return `
-      <g transform="translate(${x} 224)">
+      <g transform="translate(${x} 242)">
         <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
         <circle cx="18" cy="24" r="4" fill="${accent}"/>
         <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">${escapeXml(skill)}</text>
@@ -100,7 +114,7 @@ function createScreen(data, locale) {
     const x = positions[index];
     const accent = accents[index % accents.length];
     return `
-      <g transform="translate(${x} 306)">
+      <g transform="translate(${x} 324)">
         <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
         <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">${escapeXml(copy.metricLabels[index])}</text>
         <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">${escapeXml(value)}</text>
@@ -108,9 +122,13 @@ function createScreen(data, locale) {
       </g>`.trim();
   }).join("\n  ");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 390" role="img" aria-labelledby="title desc">
+  const scanIndicator = animationProgress === null
+    ? `<g><circle cx="28" cy="212" r="11" fill="#ff5266" opacity=".12"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/></circle><circle cx="28" cy="212" r="3" fill="#ff5266"><animate attributeName="cx" values="28;792;28" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;1;.35" dur="2s" repeatCount="indefinite"/></circle></g>`
+    : `<g><circle cx="${scanX.toFixed(1)}" cy="212" r="11" fill="#ff5266" opacity="${(Number(scanOpacity) * 0.14).toFixed(2)}"/><circle cx="${scanX.toFixed(1)}" cy="212" r="3" fill="#ff5266" opacity="${scanOpacity}"/></g>`;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 410" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)} · ${escapeXml(copy.name)}</title>
-  <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bio)} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}.</desc>
+  <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bioLines.join(" "))} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1017"/>
@@ -126,31 +144,54 @@ function createScreen(data, locale) {
       <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="panel-clip">
-      <rect x="1" y="1" width="818" height="388" rx="21"/>
+      <rect x="1" y="1" width="818" height="408" rx="21"/>
     </clipPath>
   </defs>
-  <rect width="820" height="390" rx="22" fill="url(#background)"/>
+  <rect width="820" height="410" rx="22" fill="url(#background)"/>
   <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)" clip-path="url(#panel-clip)"/>
-  <rect x="1" y="1" width="818" height="388" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <rect x="1" y="1" width="818" height="408" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
   <circle cx="29" cy="28" r="4" fill="#ff5266"/>
   <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
   <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">${escapeXml(copy.sync)} · ${escapeXml(data.updatedAt)}</text>
   <text x="28" y="75" fill="#ff5266" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4">${escapeXml(copy.heroLabel)}</text>
   <text x="28" y="119" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="39" font-weight="700" letter-spacing="-1.2">${escapeXml(copy.name)}</text>
   <text x="28" y="149" fill="#ff9b72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" font-weight="650" letter-spacing=".2">${escapeXml(copy.role)}</text>
-  <text x="28" y="176" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bio)}</text>
-  <path d="M28 194h764" stroke="#ffffff" stroke-opacity=".12"/>
-  <text x="28" y="215" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.skillsTitle)}</text>
+  <text x="28" y="176" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bioLines[0])}</text>
+  <text x="28" y="195" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bioLines[1])}</text>
+  <path d="M28 212h764" stroke="#ffffff" stroke-opacity=".12"/>
+  ${scanIndicator}
+  <text x="28" y="234" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.skillsTitle)}</text>
   ${skills}
-  <text x="28" y="296" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.metricsTitle)}</text>
+  <text x="28" y="315" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
 </svg>
 `;
 }
 
 const data = await getProfileData();
+const frameCount = 48;
+const frameDuration = 12;
 for (const locale of Object.keys(palettes)) {
-  const filename = `assets/profile-screen-v3.${locale}.svg`;
-  await writeFile(filename, createScreen(data, locale));
-  process.stdout.write(`Updated ${filename}\n`);
+  const svgFilename = `assets/profile-screen-v3.${locale}.svg`;
+  await writeFile(svgFilename, createScreen(data, locale));
+  const frameDirectory = await mkdtemp(join(tmpdir(), `profile-${locale}-`));
+  try {
+    const frames = [];
+    for (let frame = 0; frame < frameCount; frame += 1) {
+      const phase = frame / frameCount;
+      const progress = phase < 0.5 ? phase * 2 : (1 - phase) * 2;
+      const frameSvg = join(frameDirectory, `frame-${String(frame).padStart(2, "0")}.svg`);
+      const framePng = join(frameDirectory, `frame-${String(frame).padStart(2, "0")}.png`);
+      await writeFile(frameSvg, createScreen(data, locale, progress));
+      await execFileAsync("rsvg-convert", ["--width", "820", "--height", "410", frameSvg, "--output", framePng]);
+      frames.push(framePng);
+    }
+    const gifFilename = `assets/profile-motion.${locale}.gif`;
+    const generatedGif = join(frameDirectory, "profile.gif");
+    await execFileAsync("convert", ["-delay", String(frameDuration), ...frames, "-loop", "0", "-layers", "Optimize", generatedGif]);
+    await copyFile(generatedGif, gifFilename);
+    process.stdout.write(`Updated ${svgFilename} and ${gifFilename}\n`);
+  } finally {
+    await rm(frameDirectory, { recursive: true, force: true });
+  }
 }
