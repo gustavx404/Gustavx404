@@ -41,30 +41,28 @@ async function getProfileData() {
 
 const palettes = {
   en: {
-    windowTitle: "GUSTAVX404 // TTY 01",
+    windowTitle: "GUSTAVX404 // PROFILE",
     sync: "SYNC",
-    command: "whoami",
     name: "Gustavo",
+    heroLabel: "RED TEAM · APPLIED AI",
     role: "CYBERSECURITY  →  AI ENGINEERING",
     bio: "Building secure systems and exploring applied AI. Linux user since 2017.",
     skillsTitle: "01 // CORE SKILLS",
     skills: ["CYBERSECURITY", "AI ENGINEERING", "LINUX · 2017+", "3D PRINTING"],
     metricsTitle: "02 // GITHUB SIGNAL",
     metricLabels: ["PUBLIC REPOSITORIES", "PROJECT STARS", "FOLLOWERS", "MEMBER SINCE"],
-    metricUnit: "// TOTAL",
   },
   "pt-BR": {
-    windowTitle: "GUSTAVX404 // TTY 01",
+    windowTitle: "GUSTAVX404 // PERFIL",
     sync: "SINCRONIA",
-    command: "whoami",
     name: "Gustavo",
+    heroLabel: "RED TEAM · IA APLICADA",
     role: "CIBERSEGURANÇA  →  ENGENHARIA DE IA",
     bio: "Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017.",
     skillsTitle: "01 // HABILIDADES-CHAVE",
     skills: ["CIBERSEGURANÇA", "ENGENHARIA DE IA", "LINUX · 2017+", "IMPRESSÃO 3D"],
     metricsTitle: "02 // SINAIS DO GITHUB",
     metricLabels: ["REPOSITÓRIOS PÚBLICOS", "ESTRELAS NOS PROJETOS", "SEGUIDORES", "MEMBRO DESDE"],
-    metricUnit: "// TOTAL",
   },
 };
 
@@ -86,50 +84,62 @@ function createScreen(data, locale) {
     data.followerCount,
     data.joinedYear,
   ];
-  const positions = [12, 213, 414, 615];
+  const positions = [28, 223, 418, 613];
+  const accents = ["#ff5266", "#ff9b72"];
   const skills = copy.skills.map((skill, index) => {
     const x = positions[index];
-    const accent = index % 2 === 0 ? "#ff4d5a" : "#ff9b54";
+    const accent = accents[index % accents.length];
     return `
-      <g transform="translate(${x} 204)">
-        <rect width="193" height="40" rx="6" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="14" width="4" height="12" fill="${accent}"/>
-        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ ${escapeXml(skill)} ]</text>
+      <g transform="translate(${x} 224)">
+        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <circle cx="18" cy="24" r="4" fill="${accent}"/>
+        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">${escapeXml(skill)}</text>
       </g>`.trim();
   }).join("\n  ");
   const metrics = values.map((value, index) => {
     const x = positions[index];
-    const accent = index % 2 === 0 ? "#ff4d5a" : "#ff9b54";
+    const accent = accents[index % accents.length];
     return `
-      <g transform="translate(${x} 285)">
-        <rect width="193" height="64" rx="6" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="13" width="4" height="10" fill="${accent}"/>
-        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">${escapeXml(copy.metricLabels[index])}</text>
-        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">${escapeXml(value)}</text>
-        <text x="179" y="51" fill="${accent}" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">${copy.metricUnit}</text>
+      <g transform="translate(${x} 306)">
+        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">${escapeXml(copy.metricLabels[index])}</text>
+        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">${escapeXml(value)}</text>
+        <circle cx="162" cy="48" r="3" fill="${accent}"/>
       </g>`.trim();
   }).join("\n  ");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 360" role="img" aria-labelledby="title desc">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 390" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)} · ${escapeXml(copy.name)}</title>
   <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bio)} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}.</desc>
-  <rect width="820" height="360" rx="8" fill="#0d0b0c"/>
-  <rect x="1" y="1" width="818" height="358" rx="7" fill="none" stroke="#382b30"/>
-  <path d="M8 31h804" stroke="#382b30"/>
-  <circle cx="17" cy="16" r="3" fill="#ff4d5a"/>
-  <circle cx="29" cy="16" r="3" fill="#ff9b54"/>
-  <circle cx="41" cy="16" r="3" fill="#58645d"/>
-  <text x="55" y="20" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1">${escapeXml(copy.windowTitle)}</text>
-  <text x="805" y="20" fill="#ff4d5a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing=".5">${escapeXml(copy.sync)}: ${escapeXml(data.updatedAt)}</text>
-  <text x="15" y="58" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">gustavx404@workstation:~$ ${escapeXml(copy.command)}</text>
-  <rect x="237" y="47" width="7" height="13" rx="1" fill="#ff4d5a" opacity=".8"/>
-  <text x="15" y="99" fill="#f0f3ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" font-weight="700">${escapeXml(copy.name)}</text>
-  <text x="15" y="124" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600" letter-spacing=".5">${escapeXml(copy.role)}</text>
-  <text x="15" y="151" fill="#b4beb6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">${escapeXml(copy.bio)}</text>
-  <path d="M15 170h790" stroke="#382b30"/>
-  <text x="15" y="192" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.skillsTitle)}</text>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1017"/>
+      <stop offset=".55" stop-color="#171319"/>
+      <stop offset="1" stop-color="#211318"/>
+    </linearGradient>
+    <linearGradient id="glass-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".105"/>
+      <stop offset="1" stop-color="#ff5266" stop-opacity=".045"/>
+    </linearGradient>
+    <radialGradient id="ambient-glow">
+      <stop offset="0" stop-color="#ff294f" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="820" height="390" rx="22" fill="url(#background)"/>
+  <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)"/>
+  <rect x="1" y="1" width="818" height="388" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <circle cx="29" cy="28" r="4" fill="#ff5266"/>
+  <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
+  <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">${escapeXml(copy.sync)} · ${escapeXml(data.updatedAt)}</text>
+  <text x="28" y="75" fill="#ff5266" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4">${escapeXml(copy.heroLabel)}</text>
+  <text x="28" y="119" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="39" font-weight="700" letter-spacing="-1.2">${escapeXml(copy.name)}</text>
+  <text x="28" y="149" fill="#ff9b72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" font-weight="650" letter-spacing=".2">${escapeXml(copy.role)}</text>
+  <text x="28" y="176" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">${escapeXml(copy.bio)}</text>
+  <path d="M28 194h764" stroke="#ffffff" stroke-opacity=".12"/>
+  <text x="28" y="215" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.skillsTitle)}</text>
   ${skills}
-  <text x="15" y="273" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.metricsTitle)}</text>
+  <text x="28" y="296" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
 </svg>
 `;

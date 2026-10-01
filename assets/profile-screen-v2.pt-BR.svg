@@ -1,68 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 360" role="img" aria-labelledby="title desc">
-  <title id="title">GUSTAVX404 // TTY 01 · Gustavo</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 390" role="img" aria-labelledby="title desc">
+  <title id="title">GUSTAVX404 // PERFIL · Gustavo</title>
   <desc id="desc">CIBERSEGURANÇA  →  ENGENHARIA DE IA. Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017. 02 // SINAIS DO GITHUB: REPOSITÓRIOS PÚBLICOS 18 · ESTRELAS NOS PROJETOS 8 · SEGUIDORES 20 · MEMBRO DESDE 2018.</desc>
-  <rect width="820" height="360" rx="8" fill="#0d0b0c"/>
-  <rect x="1" y="1" width="818" height="358" rx="7" fill="none" stroke="#382b30"/>
-  <path d="M8 31h804" stroke="#382b30"/>
-  <circle cx="17" cy="16" r="3" fill="#ff4d5a"/>
-  <circle cx="29" cy="16" r="3" fill="#ff9b54"/>
-  <circle cx="41" cy="16" r="3" fill="#58645d"/>
-  <text x="55" y="20" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1">GUSTAVX404 // TTY 01</text>
-  <text x="805" y="20" fill="#ff4d5a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing=".5">SINCRONIA: 2026-10-01</text>
-  <text x="15" y="58" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">gustavx404@workstation:~$ whoami</text>
-  <rect x="237" y="47" width="7" height="13" rx="1" fill="#ff9b54" opacity=".8"/>
-  <text x="15" y="99" fill="#f0f3ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" font-weight="700">Gustavo</text>
-  <text x="15" y="124" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600" letter-spacing=".5">CIBERSEGURANÇA  →  ENGENHARIA DE IA</text>
-  <text x="15" y="151" fill="#b4beb6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017.</text>
-  <path d="M15 170h790" stroke="#382b30"/>
-  <text x="15" y="192" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">01 // HABILIDADES-CHAVE</text>
-  <g transform="translate(12 204)">
-        <rect width="193" height="40" rx="6" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="14" width="4" height="12" fill="#ff4d5a"/>
-        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ CIBERSEGURANÇA ]</text>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1017"/>
+      <stop offset=".55" stop-color="#171319"/>
+      <stop offset="1" stop-color="#211318"/>
+    </linearGradient>
+    <linearGradient id="glass-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".105"/>
+      <stop offset="1" stop-color="#ff5266" stop-opacity=".045"/>
+    </linearGradient>
+    <radialGradient id="ambient-glow">
+      <stop offset="0" stop-color="#ff294f" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="820" height="390" rx="22" fill="url(#background)"/>
+  <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)"/>
+  <rect x="1" y="1" width="818" height="388" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+  <circle cx="29" cy="28" r="4" fill="#ff5266"/>
+  <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
+  <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">SINCRONIA · 2026-10-01</text>
+  <text x="28" y="75" fill="#ff5266" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4">RED TEAM · IA APLICADA</text>
+  <text x="28" y="119" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="39" font-weight="700" letter-spacing="-1.2">Gustavo</text>
+  <text x="28" y="149" fill="#ff9b72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" font-weight="650" letter-spacing=".2">CIBERSEGURANÇA  →  ENGENHARIA DE IA</text>
+  <text x="28" y="176" fill="#e0d8dc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017.</text>
+  <path d="M28 194h764" stroke="#ffffff" stroke-opacity=".12"/>
+  <text x="28" y="215" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">01 // HABILIDADES-CHAVE</text>
+  <g transform="translate(28 224)">
+        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <circle cx="18" cy="24" r="4" fill="#ff5266"/>
+        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">CIBERSEGURANÇA</text>
       </g>
-  <g transform="translate(213 204)">
-        <rect width="193" height="40" rx="3" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="14" width="4" height="12" fill="#ff9b54"/>
-        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ ENGENHARIA DE IA ]</text>
+  <g transform="translate(223 224)">
+        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <circle cx="18" cy="24" r="4" fill="#ff9b72"/>
+        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">ENGENHARIA DE IA</text>
       </g>
-  <g transform="translate(414 204)">
-        <rect width="193" height="40" rx="3" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="14" width="4" height="12" fill="#ff4d5a"/>
-        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ LINUX · 2017+ ]</text>
+  <g transform="translate(418 224)">
+        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <circle cx="18" cy="24" r="4" fill="#ff5266"/>
+        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">LINUX · 2017+</text>
       </g>
-  <g transform="translate(615 204)">
-        <rect width="193" height="40" rx="3" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="14" width="4" height="12" fill="#ff9b54"/>
-        <text x="25" y="24" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600" letter-spacing=".3">[ IMPRESSÃO 3D ]</text>
+  <g transform="translate(613 224)">
+        <rect width="179" height="48" rx="12" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <circle cx="18" cy="24" r="4" fill="#ff9b72"/>
+        <text x="31" y="28" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing=".1">IMPRESSÃO 3D</text>
       </g>
-  <text x="15" y="273" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">02 // SINAIS DO GITHUB</text>
-  <g transform="translate(12 285)">
-        <rect width="193" height="64" rx="6" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="13" width="4" height="10" fill="#ff4d5a"/>
-        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">REPOSITÓRIOS PÚBLICOS</text>
-        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">18</text>
-        <text x="179" y="51" fill="#ff4d5a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+  <text x="28" y="296" fill="#c7bdc2" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600" letter-spacing="1.4">02 // SINAIS DO GITHUB</text>
+  <g transform="translate(28 306)">
+        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">REPOSITÓRIOS PÚBLICOS</text>
+        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">18</text>
+        <circle cx="162" cy="48" r="3" fill="#ff5266"/>
       </g>
-  <g transform="translate(213 285)">
-        <rect width="193" height="64" rx="3" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="13" width="4" height="10" fill="#ff9b54"/>
-        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">ESTRELAS NOS PROJETOS</text>
-        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">8</text>
-        <text x="179" y="51" fill="#ff9b54" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+  <g transform="translate(223 306)">
+        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">ESTRELAS NOS PROJETOS</text>
+        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">8</text>
+        <circle cx="162" cy="48" r="3" fill="#ff9b72"/>
       </g>
-  <g transform="translate(414 285)">
-        <rect width="193" height="64" rx="3" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="13" width="4" height="10" fill="#ff4d5a"/>
-        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">SEGUIDORES</text>
-        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">20</text>
-        <text x="179" y="51" fill="#ff4d5a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+  <g transform="translate(418 306)">
+        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">SEGUIDORES</text>
+        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">20</text>
+        <circle cx="162" cy="48" r="3" fill="#ff5266"/>
       </g>
-  <g transform="translate(615 285)">
-        <rect width="193" height="64" rx="3" fill="#171416" stroke="#493238"/>
-        <rect x="12" y="13" width="4" height="10" fill="#ff9b54"/>
-        <text x="24" y="21" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing=".35">MEMBRO DESDE</text>
-        <text x="12" y="51" fill="#e8eee9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">2018</text>
-        <text x="179" y="51" fill="#ff9b54" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">// TOTAL</text>
+  <g transform="translate(613 306)">
+        <rect width="179" height="66" rx="14" fill="url(#glass-surface)" stroke="#ffffff" stroke-opacity=".14"/>
+        <text x="14" y="21" fill="#d6cdd1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="500">MEMBRO DESDE</text>
+        <text x="14" y="52" fill="#fff9fb" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25" font-weight="700" font-variant-numeric="tabular-nums">2018</text>
+        <circle cx="162" cy="48" r="3" fill="#ff9b72"/>
       </g>
 </svg>
