@@ -44,11 +44,11 @@ const palettes = {
     windowTitle: "GUSTAVX404 // PROFILE",
     sync: "SYNC",
     name: "Gustavo",
-    heroLabel: "RED TEAM · APPLIED AI",
+    heroLabel: "RED TEAM · ADVERSARY SIM",
     role: "CYBERSECURITY  →  AI ENGINEERING",
-    bio: "Building secure systems and exploring applied AI. Linux user since 2017.",
-    skillsTitle: "01 // CORE SKILLS",
-    skills: ["CYBERSECURITY", "AI ENGINEERING", "LINUX · 2017+", "3D PRINTING"],
+    bio: "Exploring adversary simulation and AI security. Linux user since 2017.",
+    skillsTitle: "01 // FOCUS AREAS",
+    skills: ["RED TEAM", "AI SECURITY", "LINUX · 2017+", "3D PRINTING"],
     metricsTitle: "02 // GITHUB SIGNAL",
     metricLabels: ["PUBLIC REPOSITORIES", "PROJECT STARS", "FOLLOWERS", "MEMBER SINCE"],
   },
@@ -56,11 +56,11 @@ const palettes = {
     windowTitle: "GUSTAVX404 // PERFIL",
     sync: "SINCRONIA",
     name: "Gustavo",
-    heroLabel: "RED TEAM · IA APLICADA",
+    heroLabel: "RED TEAM · SIMULAÇÃO DE ATAQUE",
     role: "CIBERSEGURANÇA  →  ENGENHARIA DE IA",
-    bio: "Desenvolvo sistemas seguros e exploro aplicações de IA. Uso Linux desde 2017.",
-    skillsTitle: "01 // HABILIDADES-CHAVE",
-    skills: ["CIBERSEGURANÇA", "ENGENHARIA DE IA", "LINUX · 2017+", "IMPRESSÃO 3D"],
+    bio: "Exploro simulação de adversários e segurança em IA. Uso Linux desde 2017.",
+    skillsTitle: "01 // ÁREAS DE FOCO",
+    skills: ["RED TEAM", "SEGURANÇA EM IA", "LINUX · 2017+", "IMPRESSÃO 3D"],
     metricsTitle: "02 // SINAIS DO GITHUB",
     metricLabels: ["REPOSITÓRIOS PÚBLICOS", "ESTRELAS NOS PROJETOS", "SEGUIDORES", "MEMBRO DESDE"],
   },
@@ -125,9 +125,12 @@ function createScreen(data, locale) {
       <stop offset="0" stop-color="#ff294f" stop-opacity=".22"/>
       <stop offset="1" stop-color="#ff294f" stop-opacity="0"/>
     </radialGradient>
+    <clipPath id="panel-clip">
+      <rect x="1" y="1" width="818" height="388" rx="21"/>
+    </clipPath>
   </defs>
   <rect width="820" height="390" rx="22" fill="url(#background)"/>
-  <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)"/>
+  <circle cx="740" cy="105" r="260" fill="url(#ambient-glow)" clip-path="url(#panel-clip)"/>
   <rect x="1" y="1" width="818" height="388" rx="21" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
   <circle cx="29" cy="28" r="4" fill="#ff5266"/>
   <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
@@ -147,7 +150,7 @@ function createScreen(data, locale) {
 
 const data = await getProfileData();
 for (const locale of Object.keys(palettes)) {
-  const filename = `assets/profile-screen-v2.${locale}.svg`;
+  const filename = `assets/profile-screen-v3.${locale}.svg`;
   await writeFile(filename, createScreen(data, locale));
   process.stdout.write(`Updated ${filename}\n`);
 }
