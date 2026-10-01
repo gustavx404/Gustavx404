@@ -2,16 +2,14 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-![Focus: cybersecurity, AI engineering, Linux since 2017, and maker projects](assets/profile-badges.svg)
+![Cybersecurity, AI engineering, Linux since 2017, and 3D printing](assets/profile-badges.en.svg)
 
-**Cybersecurity professional · specializing in AI engineering**
+**Cybersecurity → AI engineering**
 
-I build practical tools and explore how secure systems and AI can work together. Linux user since 2017.
+I build practical tools, explore secure systems, and have used Linux since 2017.
 
-### Focus
+![Daily profile metrics: public repositories, stars, followers, and GitHub member since](assets/profile-metrics.en.svg)
 
-Cybersecurity · AI engineering · Linux · Software · 3D printing
-
-### Find me
+`$ connect --linkedin --tryhackme`
 
 [LinkedIn](https://www.linkedin.com/in/gustavx404/) · [TryHackMe](https://tryhackme.com/p/Gustavx404)

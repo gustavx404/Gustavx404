@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="104" viewBox="0 0 820 104" role="img" aria-labelledby="title desc">
+  <title id="title">Perfil de sistema Gustavx404</title>
+  <desc id="desc">Cibersegurança, engenharia de IA, Linux desde 2017 e impressão 3D.</desc>
+  <rect width="820" height="104" rx="8" fill="#0b0e0d"/>
+  <rect x="1" y="1" width="818" height="102" rx="7" fill="none" stroke="#303a34"/>
+  <rect x="1" y="1" width="818" height="26" rx="7" fill="#171d19"/>
+  <path d="M1 20h818v7H1z" fill="#171d19"/>
+  <circle cx="17" cy="14" r="3" fill="#ffbd4a"/>
+  <circle cx="29" cy="14" r="3" fill="#b8f56b"/>
+  <circle cx="41" cy="14" r="3" fill="#58645d"/>
+  <text x="55" y="18" fill="#94a197" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.2">GUSTAVX404 // PERFIL DO SISTEMA</text>
+  <text x="795" y="18" fill="#ffbd4a" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1">HABILIDADES</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" letter-spacing=".2">
+    <g transform="translate(12 39)">
+      <rect width="193" height="48" rx="4" fill="#151b17" stroke="#39473d"/>
+      <path d="M13 18h10v12H13z" fill="#ffbd4a"/>
+      <text x="33" y="29" fill="#e8eee9">[ CIBERSEGURANÇA ]</text>
+      <path d="M179 16v16" stroke="#ffbd4a" stroke-width="2" opacity=".75"/>
+    </g>
+    <g transform="translate(213 39)">
+      <rect width="193" height="48" rx="4" fill="#151b17" stroke="#39473d"/>
+      <path d="M13 18h10v12H13z" fill="#b8f56b"/>
+      <text x="33" y="29" fill="#e8eee9">[ ENGENHARIA DE IA ]</text>
+      <path d="M179 16v16" stroke="#b8f56b" stroke-width="2" opacity=".75"/>
+    </g>
+    <g transform="translate(414 39)">
+      <rect width="193" height="48" rx="4" fill="#151b17" stroke="#39473d"/>
+      <path d="M13 18h10v12H13z" fill="#b8f56b"/>
+      <text x="33" y="29" fill="#e8eee9">[ LINUX / DESDE 2017 ]</text>
+      <path d="M179 16v16" stroke="#b8f56b" stroke-width="2" opacity=".75"/>
+    </g>
+    <g transform="translate(615 39)">
+      <rect width="193" height="48" rx="4" fill="#151b17" stroke="#39473d"/>
+      <path d="M13 18h10v12H13z" fill="#ffbd4a"/>
+      <text x="33" y="29" fill="#e8eee9">[ IMPRESSÃO 3D ]</text>
+      <path d="M179 16v16" stroke="#ffbd4a" stroke-width="2" opacity=".75"/>
+    </g>
+  </g>
+</svg>
