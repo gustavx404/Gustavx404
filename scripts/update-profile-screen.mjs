@@ -52,7 +52,6 @@ const palettes = {
     metricsTitle: "02 // GITHUB SIGNAL",
     metricLabels: ["PUBLIC REPOSITORIES", "PROJECT STARS", "FOLLOWERS", "MEMBER SINCE"],
     metricUnit: "// TOTAL",
-    footer: "CONNECT  LINKEDIN · TRYHACKME     |     LOCALE  EN · PT-BR",
   },
   "pt-BR": {
     windowTitle: "GUSTAVX404 // TTY 01",
@@ -66,7 +65,6 @@ const palettes = {
     metricsTitle: "02 // SINAIS DO GITHUB",
     metricLabels: ["REPOSITÓRIOS PÚBLICOS", "ESTRELAS NOS PROJETOS", "SEGUIDORES", "MEMBRO DESDE"],
     metricUnit: "// TOTAL",
-    footer: "CONTATO  LINKEDIN · TRYHACKME     |     IDIOMA  EN · PT-BR",
   },
 };
 
@@ -89,7 +87,6 @@ function createScreen(data, locale) {
     data.joinedYear,
   ];
   const positions = [12, 213, 414, 615];
-  const connectLabel = locale === "en" ? "CONNECT" : "CONTATO";
   const skills = copy.skills.map((skill, index) => {
     const x = positions[index];
     const accent = index % 2 === 0 ? "#ff4d5a" : "#ff9b54";
@@ -113,11 +110,11 @@ function createScreen(data, locale) {
       </g>`.trim();
   }).join("\n  ");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 380" role="img" aria-labelledby="title desc">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 360" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)} · ${escapeXml(copy.name)}</title>
   <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bio)} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}.</desc>
-  <rect width="820" height="380" rx="8" fill="#0d0b0c"/>
-  <rect x="1" y="1" width="818" height="378" rx="7" fill="none" stroke="#382b30"/>
+  <rect width="820" height="360" rx="8" fill="#0d0b0c"/>
+  <rect x="1" y="1" width="818" height="358" rx="7" fill="none" stroke="#382b30"/>
   <path d="M8 31h804" stroke="#382b30"/>
   <circle cx="17" cy="16" r="3" fill="#ff4d5a"/>
   <circle cx="29" cy="16" r="3" fill="#ff9b54"/>
@@ -134,15 +131,6 @@ function createScreen(data, locale) {
   ${skills}
   <text x="15" y="273" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
-  <path d="M15 363h790" stroke="#382b30"/>
-  <text x="15" y="375" fill="#ff4d5a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700" letter-spacing=".4">${connectLabel}</text>
-  <a href="https://www.linkedin.com/in/gustavx404/" aria-label="LinkedIn"><text x="105" y="375" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">LINKEDIN</text></a>
-  <text x="158" y="375" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">·</text>
-  <a href="https://tryhackme.com/p/Gustavx404" aria-label="TryHackMe"><text x="173" y="375" fill="#ff9b54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">TRYHACKME</text></a>
-  <text x="250" y="375" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">|</text>
-  <a href="https://github.com/gustavx404/Gustavx404/blob/main/README.md" aria-label="English"><text x="266" y="375" fill="${locale === "en" ? "#ff4d5a" : "#94a197"}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">EN</text></a>
-  <text x="286" y="375" fill="#657269" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">·</text>
-  <a href="https://github.com/gustavx404/Gustavx404/blob/main/README.pt-BR.md" aria-label="Português brasileiro"><text x="300" y="375" fill="${locale === "pt-BR" ? "#ff4d5a" : "#94a197"}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="600">PT-BR</text></a>
 </svg>
 `;
 }
