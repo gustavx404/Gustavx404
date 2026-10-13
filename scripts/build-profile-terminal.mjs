@@ -9,11 +9,11 @@ const width = 1000;
 const height = 690;
 const frames = [];
 const scene = [
-  ["$ whoami", ["Gustavx404", "Student and security enthusiast", "Linux user since 2017 · Open to work"]],
-  ["$ cat /etc/focus", ["Software development", "Artificial intelligence", "Cybersecurity"]],
-  ["$ ls -la ~/projects", [".dotfiles/     Linux configuration files", "homelab/       Home lab experiments", "Estudos/       Study notes and exercises"]],
-  ["$ gh profile --summary", ["18 public repositories · 8 stars · 20 followers", "Member since 2018"]],
-  ["$ printf \"Building, learning, securing.\"", ["Building, learning, securing."]],
+  ["└─$ whoami", ["Gustavx404", "Student and security enthusiast", "Linux user since 2017 · Open to work"]],
+  ["└─$ cat /etc/focus", ["Software development", "Artificial intelligence", "Cybersecurity"]],
+  ["└─$ ls -la ~/projects", [".dotfiles/     Linux configuration files", "homelab/       Home lab experiments", "Estudos/       Study notes and exercises"]],
+  ["└─$ gh profile --summary", ["18 public repositories · 8 stars · 20 followers", "Member since 2018"]],
+  ["└─$ printf \"Building, learning, securing.\"", ["Building, learning, securing."]],
 ];
 
 function escapeXml(value) {
@@ -23,26 +23,26 @@ function escapeXml(value) {
 function render(visible, titleText, cursor = true, glow = 0.5) {
   const rows = visible.map((row, index) => {
     const y = 176 + index * 22;
-    const color = row.kind === "command" ? "#ffbf00" : row.kind === "identity" ? "#fff2cc" : "#c1ad83";
+  const color = row.kind === "command" ? "#00d4ff" : row.kind === "identity" ? "#f4f7ff" : "#b4c0da";
     const weight = row.kind === "identity" ? " font-weight=\"700\"" : "";
     return `<text x="42" y="${y}" fill="${color}"${weight}>${escapeXml(row.text)}</text>`;
   }).join("\n  ");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <defs><filter id="title-glow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="4"/></filter></defs>
-  <rect width="1000" height="690" rx="16" fill="#050505"/>
-  <rect x="1" y="1" width="998" height="688" rx="15" fill="none" stroke="#8a5a00" stroke-width="2"/>
-  <path d="M1 52h998" stroke="#5b3a00"/>
-  <circle cx="25" cy="26" r="5" fill="#ffc400"/><circle cx="44" cy="26" r="5" fill="#ffb000" opacity=".7"/><circle cx="63" cy="26" r="5" fill="#ffda73" opacity=".5"/>
-  <text x="88" y="31" fill="#fff2cc" font-family="monospace" font-size="14" font-weight="700">gustavx404@matrix:~</text>
-  <text x="972" y="31" fill="#ffbf00" text-anchor="end" font-family="monospace" font-size="11">PROFILE SESSION · ONLINE</text>
-  <text x="42" y="112" fill="#ffc400" opacity="${glow}" filter="url(#title-glow)" font-family="monospace" font-size="38" font-weight="700" letter-spacing="3">${escapeXml(titleText)}</text>
-  <text x="42" y="112" fill="#ffc400" font-family="monospace" font-size="38" font-weight="700" letter-spacing="3">${escapeXml(titleText)}</text>
-  <text x="44" y="140" fill="#c1ad83" font-family="monospace" font-size="12" letter-spacing="1">SOFTWARE · ARTIFICIAL INTELLIGENCE · CYBERSECURITY</text>
+  <rect width="1000" height="690" rx="16" fill="#050811"/>
+  <rect x="1" y="1" width="998" height="688" rx="15" fill="none" stroke="#3656a5" stroke-width="2"/>
+  <path d="M1 52h998" stroke="#263b70"/>
+  <circle cx="25" cy="26" r="5" fill="#4d7cff"/><circle cx="44" cy="26" r="5" fill="#00d4ff" opacity=".7"/><circle cx="63" cy="26" r="5" fill="#a855f7" opacity=".7"/>
+  <text x="88" y="31" fill="#e4ecff" font-family="monospace" font-size="14" font-weight="700">┌──(gustavx404@kali)-[~]</text>
+  <text x="972" y="31" fill="#00d4ff" text-anchor="end" font-family="monospace" font-size="11">PROFILE SESSION · ONLINE</text>
+  <text x="42" y="112" fill="#00d4ff" opacity="${glow}" filter="url(#title-glow)" font-family="monospace" font-size="38" font-weight="700" letter-spacing="3">${escapeXml(titleText)}</text>
+  <text x="42" y="112" fill="#4d7cff" font-family="monospace" font-size="38" font-weight="700" letter-spacing="3">${escapeXml(titleText)}</text>
+  <text x="44" y="140" fill="#8090b2" font-family="monospace" font-size="12" letter-spacing="1">SOFTWARE · ARTIFICIAL INTELLIGENCE · CYBERSECURITY</text>
   <g font-family="monospace" font-size="15">${rows}</g>
-  ${cursor ? `<rect x="42" y="${176 + visible.length * 22 - 15}" width="9" height="17" fill="#ffc400" opacity=".85"/>` : ""}
-  <path d="M1 642h998" stroke="#5b3a00"/>
-  <text x="24" y="671" fill="#8d7543" font-family="monospace" font-size="11">MATRIX TERMINAL // BUILDING · LEARNING · SECURING</text>
-  <text x="976" y="671" fill="#ffbf00" text-anchor="end" font-family="monospace" font-size="11">CTRL+C · exit 0</text>
+  ${cursor ? `<rect x="42" y="${176 + visible.length * 22 - 15}" width="9" height="17" fill="#00d4ff" opacity=".85"/>` : ""}
+  <path d="M1 642h998" stroke="#263b70"/>
+  <text x="24" y="671" fill="#627398" font-family="monospace" font-size="11">KALI-INSPIRED TERMINAL // BUILDING · LEARNING · SECURING</text>
+  <text x="976" y="671" fill="#00d4ff" text-anchor="end" font-family="monospace" font-size="11">CTRL+C · exit 0</text>
 </svg>`;
 }
 
@@ -78,7 +78,7 @@ try {
     row.text = command;
     await addFrame(false, 4);
     for (const [index, text] of output.entries()) {
-      visible.push({ kind: index === 0 && command === "$ whoami" ? "identity" : "output", text });
+      visible.push({ kind: index === 0 && command === "└─$ whoami" ? "identity" : "output", text });
       await addFrame(true, 5);
     }
     await addFrame(true, 7);
