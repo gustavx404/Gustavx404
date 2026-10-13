@@ -1,0 +1,24 @@
+name: Project idea
+description: Suggest a project for the community to vote on.
+title: "Project vote"
+body:
+  - type: markdown
+    attributes:
+      value: Project names appear in the README. Open proposals collect 👍 reactions as votes.
+  - type: input
+    id: project
+    attributes:
+      label: Project idea
+      description: Give the project a short name.
+      placeholder: Build a small web security lab
+    validations:
+      required: true
+      max_length: 70
+  - type: textarea
+    id: details
+    attributes:
+      label: What should it do?
+      description: A short description helps people decide what to vote for.
+    validations:
+      required: false
+      max_length: 300

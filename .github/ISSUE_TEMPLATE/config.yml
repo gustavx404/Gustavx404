@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Vote on a project idea
+    url: https://github.com/Gustavx404/Gustavx404/issues?q=is%3Aissue+is%3Aopen+%22Project+vote%22
+    about: Open a project proposal and react with 👍 to vote.

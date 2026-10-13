@@ -1,6 +1,13 @@
 name: Update profile screen
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "README.pt-BR.md"
+      - "scripts/**"
+      - ".github/workflows/update-profile-metrics.yml"
   schedule:
     - cron: "13 6 * * *"
   workflow_dispatch:
@@ -8,20 +15,34 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: generated-profile-readme
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
-      - name: Generate Portuguese profile screen
+      - name: Install image renderers
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes librsvg2-bin imagemagick
+      - name: Generate profile graphics
         run: node scripts/update-profile-screen.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Build animated profile graphics
+        run: |
+          node scripts/build-profile-terminal.mjs
+          node scripts/build-commit-quest.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Commit updated profile graphics
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/profile-screen-v3.pt-BR.svg
+          git add assets/profile-screen-v3.pt-BR.svg assets/profile-terminal.gif assets/commit-quest.gif
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh profile metrics"
             git push

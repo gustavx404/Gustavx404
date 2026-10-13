@@ -1,0 +1,16 @@
+name: Visitor message
+description: Leave a short note for the profile guestbook.
+title: "Guestbook: "
+body:
+  - type: markdown
+    attributes:
+      value: Your GitHub username and message will appear publicly in the README while this issue is open.
+  - type: textarea
+    id: message
+    attributes:
+      label: Message
+      description: Keep it short and kind. Maximum 180 characters.
+      placeholder: Thanks for stopping by!
+    validations:
+      required: true
+      max_length: 180

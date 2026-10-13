@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="170" height="42" viewBox="0 0 170 42" role="img" aria-labelledby="title">
   <title id="title">TryHackMe profile</title>
-  <rect x="1" y="1" width="168" height="40" rx="7" fill="#090e1b" stroke="#4d7cff" stroke-width="1.5"/>
-  <path d="M17 14h15v3H17zm0 6h15v3H17zm0 6h10v3H17z" fill="#00d4ff"/>
-  <text x="41" y="26" fill="#e4ecff" font-family="monospace" font-size="12" font-weight="700">TRYHACKME ↗</text>
+  <rect x="1" y="1" width="168" height="40" rx="7" fill="#100e08" stroke="#b58100" stroke-width="1.5"/>
+  <path d="M17 14h15v3H17zm0 6h15v3H17zm0 6h10v3H17z" fill="#f5bd00"/>
+  <text x="41" y="26" fill="#fff4c2" font-family="monospace" font-size="12" font-weight="700">TRYHACKME ↗</text>
 </svg>
