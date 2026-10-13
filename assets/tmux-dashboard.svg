@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1000 570" role="img" aria-labelledby="title desc">
+  <title id="title">GUSTAVX404 tmux operator dashboard</title>
+  <desc id="desc">A black and green Matrix style terminal dashboard with tmux style tabs for overview, focus, projects, and contact. It shows software, AI, cybersecurity, Linux since 2017, GitHub statistics, and selected projects.</desc>
+  <defs><clipPath id="dashboard-clip"><rect x="2" y="2" width="996" height="566" rx="14"/></clipPath></defs>
+  <rect width="1000" height="570" rx="16" fill="#08090b"/>
+  <rect x="1" y="1" width="998" height="568" rx="15" fill="none" stroke="#39ff14" stroke-opacity=".55"/>
+  <path d="M1 49h998" stroke="#39ff14" stroke-opacity=".35"/>
+  <circle data-pulse="true" cx="25" cy="25" r="5" fill="#39ff14"/><circle cx="44" cy="25" r="5" fill="#00ff88" opacity=".7"/><circle cx="63" cy="25" r="5" fill="#aaff99" opacity=".5"/>
+  <text x="88" y="30" fill="#e6f5e7" font-family="monospace" font-size="14" font-weight="700">gustavx404@github</text>
+  <text x="972" y="30" fill="#00ff88" text-anchor="end" font-family="monospace" font-size="11">SESSION: PROFILE · ONLINE</text>
+
+  <rect x="1" y="50" width="998" height="36" fill="#0c160e"/>
+  <text data-tab="0" x="22" y="73" fill="#39ff14" font-family="monospace" font-size="12">0:overview*</text>
+  <text data-tab="1" x="153" y="73" fill="#8aa68d" font-family="monospace" font-size="12">1:focus</text>
+  <text data-tab="2" x="254" y="73" fill="#8aa68d" font-family="monospace" font-size="12">2:projects</text>
+  <text data-tab="3" x="379" y="73" fill="#8aa68d" font-family="monospace" font-size="12">3:contact</text>
+  <text x="978" y="73" fill="#66806a" text-anchor="end" font-family="monospace" font-size="11">[tmux] 4 windows</text>
+
+  <!-- MATRIX_LAYER -->
+  <g font-family="monospace" clip-path="url(#dashboard-clip)">
+    <rect data-pane="0" x="22" y="104" width="465" height="159" rx="7" fill="#0d0d10" fill-opacity=".78" stroke="#176b2a"/>
+    <path d="M22 132h465" stroke="#176b2a"/>
+    <text x="38" y="123" fill="#00ff88" font-size="11">pane 0 · whoami</text>
+    <text x="42" y="166" fill="#f0f8ef" font-size="22" font-weight="700">GUSTAVX404</text>
+    <text x="42" y="192" fill="#bdd1bf" font-size="13">Student · Open to work</text>
+    <text x="42" y="221" fill="#8aa68d" font-size="12">$ whoami</text>
+    <text x="119" y="221" fill="#00ff88" font-size="12">software / AI / cybersecurity</text>
+    <text data-cursor="true" x="42" y="244" fill="#39ff14" font-size="12">▌</text>
+
+    <rect data-pane="1" x="513" y="104" width="465" height="159" rx="7" fill="#0d0d10" fill-opacity=".78" stroke="#176b2a"/>
+    <path d="M513 132h465" stroke="#176b2a"/>
+    <text x="529" y="123" fill="#00ff88" font-size="11">pane 1 · focus</text>
+    <text x="535" y="162" fill="#00ff88" font-size="13">&gt;</text><text x="555" y="162" fill="#e3eee4" font-size="13">Software development</text>
+    <text x="535" y="190" fill="#00ff88" font-size="13">&gt;</text><text x="555" y="190" fill="#e3eee4" font-size="13">Artificial intelligence</text>
+    <text x="535" y="218" fill="#00ff88" font-size="13">&gt;</text><text x="555" y="218" fill="#e3eee4" font-size="13">Cybersecurity</text>
+    <text x="535" y="246" fill="#00ff88" font-size="13">&gt;</text><text x="555" y="246" fill="#e3eee4" font-size="13">Linux user since 2017</text>
+
+    <rect data-pane="2" x="22" y="281" width="465" height="159" rx="7" fill="#0d0d10" fill-opacity=".78" stroke="#176b2a"/>
+    <path d="M22 309h465" stroke="#176b2a"/>
+    <text x="38" y="300" fill="#00ff88" font-size="11">pane 2 · github --summary</text>
+    <text x="42" y="340" fill="#8aa68d" font-size="11">PUBLIC REPOS</text><text x="42" y="374" fill="#e3eee4" font-size="24" font-weight="700">18</text>
+    <text x="158" y="340" fill="#8aa68d" font-size="11">STARS</text><text x="158" y="374" fill="#e3eee4" font-size="24" font-weight="700">8</text>
+    <text x="274" y="340" fill="#8aa68d" font-size="11">FOLLOWERS</text><text x="274" y="374" fill="#e3eee4" font-size="24" font-weight="700">20</text>
+    <text x="390" y="340" fill="#8aa68d" font-size="11">MEMBER SINCE</text><text x="390" y="374" fill="#e3eee4" font-size="24" font-weight="700">2018</text>
+    <text x="42" y="414" fill="#66806a" font-size="11">$ gh profile --public</text><text x="231" y="414" fill="#00ff88" font-size="11">exit 0</text>
+
+    <rect data-pane="3" x="513" y="281" width="465" height="159" rx="7" fill="#0d0d10" fill-opacity=".78" stroke="#176b2a"/>
+    <path d="M513 309h465" stroke="#176b2a"/>
+    <text x="529" y="300" fill="#00ff88" font-size="11">pane 3 · ls ~/projects</text>
+    <text x="535" y="346" fill="#00ff88" font-size="13">drwx</text><text x="585" y="346" fill="#e3eee4" font-size="13">.dotfiles</text><text x="941" y="346" fill="#66806a" text-anchor="end" font-size="11">★ 2</text>
+    <text x="535" y="377" fill="#00ff88" font-size="13">drwx</text><text x="585" y="377" fill="#e3eee4" font-size="13">homelab</text><text x="941" y="377" fill="#66806a" text-anchor="end" font-size="11">★ 1</text>
+    <text x="535" y="408" fill="#00ff88" font-size="13">drwx</text><text x="585" y="408" fill="#e3eee4" font-size="13">Estudos</text><text x="941" y="408" fill="#66806a" text-anchor="end" font-size="11">★ 1</text>
+
+    <path d="M1 462h998v92a15 15 0 0 1-15 15H16a15 15 0 0 1-15-15z" fill="#0c160e"/>
+    <path d="M1 462h998" stroke="#39ff14" stroke-opacity=".55"/>
+    <text x="22" y="491" fill="#00ff88" font-size="11">gustavx404:~$</text><text x="133" y="491" fill="#e3eee4" font-size="11">printf "Building, learning, securing."</text>
+    <text x="22" y="522" fill="#66806a" font-size="11">[0] overview*   [1] focus   [2] projects   [3] contact</text>
+    <text x="978" y="522" fill="#00ff88" text-anchor="end" font-size="11">CTRL+B  ·  profile session</text>
+    <text x="22" y="550" fill="#506a55" font-size="10">LAST SYNC · 2026-10-13</text>
+    <text x="978" y="550" fill="#506a55" text-anchor="end" font-size="10">MATRIX TERMINAL // EN</text>
+  </g>
+</svg>

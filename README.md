@@ -1,4 +1,9 @@
 <div align="center">
-<img src="assets/profile-motion.en.gif" width="100%" alt="Animated profile of a student interested in software, AI and cybersecurity, seeking opportunities." /><br />
-<code>CONNECT</code> <a href="https://www.linkedin.com/in/gustavx404/"><kbd>LinkedIn ↗</kbd></a> <a href="https://tryhackme.com/p/Gustavx404"><kbd>TryHackMe ↗</kbd></a> <code>| LOCALE</code> <strong><kbd>EN</kbd></strong> <a href="README.pt-BR.md"><kbd>PT-BR</kbd></a>
+
+<img src="assets/profile-terminal.gif" width="100%" alt="Animated Matrix terminal with Gustavx404's name typing in, followed by profile commands and results." />
+
+<a href="https://www.linkedin.com/in/gustavx404/"><img src="assets/button-linkedin.svg" alt="LinkedIn" width="160" height="42" /></a>
+<a href="https://tryhackme.com/p/Gustavx404"><img src="assets/button-tryhackme.svg" alt="TryHackMe" width="170" height="42" /></a>
+<a href="https://github.com/Gustavx404"><img src="assets/button-github.svg" alt="GitHub" width="150" height="42" /></a>
+
 </div>

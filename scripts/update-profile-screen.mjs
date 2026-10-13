@@ -52,23 +52,23 @@ async function getProfileData() {
 
 const palettes = {
   en: {
-    windowTitle: "GUSTAVX404 // PROFILE",
+    windowTitle: "GUSTAVX404 // RED OPERATOR",
     sync: "SYNC",
-    role: "STUDENT · OPEN TO WORK",
-    bio: "Interested in software, AI and cybersecurity · Linux since 2017.",
+    role: "RED OPERATOR · OPEN TO WORK",
+    bio: "Software · AI · Cybersecurity · Linux since 2017.",
     metricsTitle: "GITHUB",
     metricLabels: ["REPOS", "STARS", "FOLLOWERS", "SINCE"],
-    topRepositoriesTitle: "TOP PROJECTS",
+    topRepositoriesTitle: "ACTIVE PROJECTS",
     starLabel: "stars",
   },
   "pt-BR": {
-    windowTitle: "GUSTAVX404 // PERFIL",
+    windowTitle: "GUSTAVX404 // RED OPERATOR",
     sync: "SINCRONIA",
-    role: "ESTUDANTE · EM BUSCA DE VAGA",
-    bio: "Interesse em software, IA e cibersegurança · Linux desde 2017.",
+    role: "RED OPERATOR · EM BUSCA DE VAGA",
+    bio: "Software · IA · Cibersegurança · Linux desde 2017.",
     metricsTitle: "GITHUB",
     metricLabels: ["REPOS", "ESTRELAS", "SEGUIDORES", "DESDE"],
-    topRepositoriesTitle: "PROJETOS EM DESTAQUE",
+    topRepositoriesTitle: "PROJETOS ATIVOS",
     starLabel: "estrelas",
   },
 };
@@ -96,9 +96,9 @@ function createScreen(data, locale, animationProgress = null) {
     const x = positions[index];
     return `
       <g transform="translate(${x} 157)">
-        <rect width="179" height="54" rx="10" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
-        <text x="12" y="18" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="500" letter-spacing=".5">${escapeXml(copy.metricLabels[index])}</text>
-        <text x="12" y="43" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="650" font-variant-numeric="tabular-nums">${escapeXml(value)}</text>
+        <rect width="179" height="54" rx="10" fill="#100d05" stroke="#ffc400" stroke-opacity=".28"/>
+        <text x="12" y="18" fill="#a58d61" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="500" letter-spacing=".5">${escapeXml(copy.metricLabels[index])}</text>
+        <text x="12" y="43" fill="#f1e7cf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="650" font-variant-numeric="tabular-nums">${escapeXml(value)}</text>
       </g>`.trim();
   }).join("\n  ");
   const topRepositories = data.topRepositories.map((repo, index) => {
@@ -106,9 +106,9 @@ function createScreen(data, locale, animationProgress = null) {
     const name = repo.name.length > 22 ? `${repo.name.slice(0, 21)}…` : repo.name;
     return `
       <g transform="translate(${x} 248)">
-        <rect width="248" height="30" rx="8" fill="#191a21" stroke="#ffffff" stroke-opacity=".1"/>
-        <text x="12" y="19" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="550">${escapeXml(name)}</text>
-        <text x="235" y="19" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="650">★ ${escapeXml(repo.stars)}</text>
+        <rect width="248" height="30" rx="8" fill="#100d05" stroke="#ffc400" stroke-opacity=".24"/>
+        <text x="12" y="19" fill="#fff6df" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="550">${escapeXml(name)}</text>
+        <text x="235" y="19" fill="#ffbf00" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="8" font-weight="650">★ ${escapeXml(repo.stars)}</text>
       </g>`.trim();
   }).join("\n  ");
   const pulseOpacity = animationProgress === null ? "1" : (0.65 + 0.35 * Math.sin(Math.PI * animationProgress)).toFixed(2);
@@ -116,17 +116,17 @@ function createScreen(data, locale, animationProgress = null) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 820 304" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(copy.windowTitle)}</title>
   <desc id="desc">${escapeXml(copy.role)}. ${escapeXml(copy.bio)} ${escapeXml(copy.metricsTitle)}: ${escapeXml(copy.metricLabels.map((label, index) => `${label} ${values[index]}`).join(" · "))}. ${escapeXml(copy.topRepositoriesTitle)}: ${escapeXml(data.topRepositories.map((repo) => `${repo.name}, ${repo.stars} ${copy.starLabel}`).join(" · "))}.</desc>
-  <rect width="820" height="304" rx="18" fill="#101116"/>
-  <rect x="1" y="1" width="818" height="302" rx="17" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
-  <circle cx="29" cy="28" r="4" fill="#ff5266" opacity="${pulseOpacity}"/>
-  <text x="43" y="32" fill="#e7e0e4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
-  <text x="791" y="32" fill="#ff9b72" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">${escapeXml(copy.sync)} · ${escapeXml(data.updatedAt)}</text>
-  <text x="28" y="78" fill="#f5f2f4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="19" font-weight="650" letter-spacing="-.3">${escapeXml(copy.role)}</text>
-  <text x="28" y="103" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">${escapeXml(copy.bio)}</text>
-  <path d="M28 126h764" stroke="#ffffff" stroke-opacity=".12"/>
-  <text x="28" y="148" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing="1">${escapeXml(copy.metricsTitle)}</text>
+  <rect width="820" height="304" rx="18" fill="#050505"/>
+  <rect x="1" y="1" width="818" height="302" rx="17" fill="none" stroke="#ffc400" stroke-opacity=".42"/>
+  <circle cx="29" cy="28" r="4" fill="#ffc400" opacity="${pulseOpacity}"/>
+  <text x="43" y="32" fill="#fff2cc" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="650" letter-spacing="1">GUSTAVX404</text>
+  <text x="791" y="32" fill="#ffbf00" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing=".5">${escapeXml(copy.sync)} · ${escapeXml(data.updatedAt)}</text>
+  <text x="28" y="78" fill="#fff6df" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="19" font-weight="650" letter-spacing="-.3">${escapeXml(copy.role)}</text>
+  <text x="28" y="103" fill="#a58d61" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">${escapeXml(copy.bio)}</text>
+  <path d="M28 126h764" stroke="#ffc400" stroke-opacity=".35"/>
+  <text x="28" y="148" fill="#a58d61" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing="1">${escapeXml(copy.metricsTitle)}</text>
   ${metrics}
-  <text x="28" y="237" fill="#aaa6ad" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing="1">${escapeXml(copy.topRepositoriesTitle)}</text>
+  <text x="28" y="237" fill="#a58d61" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="600" letter-spacing="1">${escapeXml(copy.topRepositoriesTitle)}</text>
   ${topRepositories}
 </svg>
 `;

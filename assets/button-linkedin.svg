@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="42" viewBox="0 0 160 42" role="img" aria-labelledby="title">
+  <title id="title">LinkedIn profile</title>
+  <rect x="1" y="1" width="158" height="40" rx="7" fill="#100d05" stroke="#ffc400" stroke-width="1.5"/>
+  <path d="M17 15h4v13h-4zm2-6a2.2 2.2 0 1 1 0 4.4A2.2 2.2 0 0 1 19 9zm5 6h4v1.8c.6-1.1 1.8-2.2 3.8-2.2 4 0 4.8 2.6 4.8 6V28h-4v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V28h-4z" fill="#ffbf00"/>
+  <text x="49" y="26" fill="#fff2cc" font-family="monospace" font-size="12" font-weight="700">LINKEDIN ↗</text>
+</svg>

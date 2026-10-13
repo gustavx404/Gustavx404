@@ -1,4 +1,15 @@
 <div align="center">
-<img src="assets/profile-motion.pt-BR.gif" width="100%" alt="Perfil animado de estudante interessado em software, IA e cibersegurança, em busca de oportunidades." /><br />
-<code>CONTATO</code> <a href="https://www.linkedin.com/in/gustavx404/"><kbd>LinkedIn ↗</kbd></a> <a href="https://tryhackme.com/p/Gustavx404"><kbd>TryHackMe ↗</kbd></a> <code>| IDIOMA</code> <a href="README.md"><kbd>EN</kbd></a> <strong><kbd>PT-BR</kbd></strong>
+
+<img src="assets/profile-screen-v3.pt-BR.svg" width="100%" alt="Perfil Red Operator de Gustavx404: software, IA e cibersegurança, com estatísticas do GitHub e projetos em destaque." />
+
+### `> PERFIL DO SISTEMA` · GUSTAVX404
+
+**Software · Inteligência Artificial · Cibersegurança**
+
+Usuário Linux desde 2017 · Em busca de oportunidade
+
+[LinkedIn ↗](https://www.linkedin.com/in/gustavx404/) · [TryHackMe ↗](https://tryhackme.com/p/Gustavx404) · [GitHub ↗](https://github.com/Gustavx404)
+
+<sub>Status do operador: online&nbsp;&nbsp;|&nbsp;&nbsp;Idioma: <a href="README.md">EN</a> · <strong>PT-BR</strong></sub>
+
 </div>
