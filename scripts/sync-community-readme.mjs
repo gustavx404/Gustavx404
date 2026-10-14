@@ -6,10 +6,6 @@ const readmePath = new URL("../README.md", import.meta.url);
 const startMarker = "<!-- COMMUNITY_START -->";
 const endMarker = "<!-- COMMUNITY_END -->";
 
-if (!repository || !token) {
-  throw new Error("GITHUB_REPOSITORY and GITHUB_TOKEN are required.");
-}
-
 async function github(path) {
   const response = await fetch(`https://api.github.com/repos/${repository}${path}`, {
     headers: {
@@ -100,17 +96,28 @@ async function renderProjectVotes(issues) {
   ].join("\n");
 }
 
-const issues = await listOpenIssues();
-const community = [renderVisitorWall(issues), await renderProjectVotes(issues)].join("\n\n");
-const readme = await readFile(readmePath, "utf8");
-const start = readme.indexOf(startMarker);
-const end = readme.indexOf(endMarker);
-if (start < 0 || end < 0 || end <= start) throw new Error("Community markers are missing or out of order in README.md.");
+async function main() {
+  const readme = await readFile(readmePath, "utf8");
+  const start = readme.indexOf(startMarker);
+  const end = readme.indexOf(endMarker);
+  if (start < 0 && end < 0) {
+    process.stdout.write("Community section is absent; skipping sync.\n");
+    return;
+  }
+  if (start < 0 || end < 0 || end <= start) throw new Error("Community markers are missing or out of order in README.md.");
+  if (!repository || !token) {
+    throw new Error("GITHUB_REPOSITORY and GITHUB_TOKEN are required.");
+  }
 
-const updated = `${readme.slice(0, start + startMarker.length)}\n${community}\n${readme.slice(end)}`;
-if (updated !== readme) {
-  await writeFile(readmePath, updated);
-  process.stdout.write("Updated the README visitor wall and project votes.\n");
-} else {
-  process.stdout.write("Community sections are already current.\n");
+  const issues = await listOpenIssues();
+  const community = [renderVisitorWall(issues), await renderProjectVotes(issues)].join("\n\n");
+  const updated = `${readme.slice(0, start + startMarker.length)}\n${community}\n${readme.slice(end)}`;
+  if (updated !== readme) {
+    await writeFile(readmePath, updated);
+    process.stdout.write("Updated the README visitor wall and project votes.\n");
+  } else {
+    process.stdout.write("Community sections are already current.\n");
+  }
 }
+
+await main();
