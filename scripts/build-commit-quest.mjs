@@ -18,6 +18,9 @@ const commits = log.trim().split("\n").filter(Boolean).map((line) => {
   .filter((commit) => !/(?:kali|starred)/i.test(commit.subject))
   .slice(0, 6)
   .reverse();
+if (commits.length === 0) {
+  throw new Error("No eligible commits found for the commit history animation.");
+}
 const points = commits.map((_, index) => ({ x: 43, y: 106 + index * 40 }));
 const { stdout: branchName } = await execFileAsync("git", ["branch", "--show-current"]);
 const branch = branchName.trim() || "detached";
