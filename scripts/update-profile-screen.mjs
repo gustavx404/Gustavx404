@@ -44,17 +44,15 @@ async function getProfileData() {
   };
 }
 
-const palettes = {
-  "pt-BR": {
-    windowTitle: "GUSTAVX404 // RED OPERATOR",
-    sync: "SINCRONIA",
-    role: "RED OPERATOR · EM BUSCA DE VAGA",
-    bio: "Software · IA · Cibersegurança · Linux desde 2017.",
-    metricsTitle: "GITHUB",
-    metricLabels: ["REPOS", "ESTRELAS", "SEGUIDORES", "DESDE"],
-    topRepositoriesTitle: "PROJETOS ATIVOS",
-    starLabel: "estrelas",
-  },
+const copy = {
+  windowTitle: "Gustavx404 — GitHub metrics",
+  sync: "UPDATED",
+  role: "RED TEAM OPERATOR",
+  bio: "Web security · Linux since 2017.",
+  metricsTitle: "GITHUB",
+  metricLabels: ["REPOS", "STARS", "FOLLOWERS", "JOINED"],
+  topRepositoriesTitle: "TOP REPOSITORIES",
+  starLabel: "stars",
 };
 
 function escapeXml(value) {
@@ -67,8 +65,7 @@ function escapeXml(value) {
   })[char]);
 }
 
-function createScreen(data, locale) {
-  const copy = palettes[locale];
+function createScreen(data) {
   const values = [
     data.repositoryCount,
     data.starCount,
@@ -115,7 +112,6 @@ function createScreen(data, locale) {
 }
 
 const data = await getProfileData();
-const locale = "pt-BR";
-const svgFilename = `assets/profile-screen-v3.${locale}.svg`;
-await writeFile(svgFilename, createScreen(data, locale));
+const svgFilename = "assets/profile-metrics.svg";
+await writeFile(svgFilename, createScreen(data));
 process.stdout.write(`Updated ${svgFilename}\n`);
