@@ -25,8 +25,6 @@
 - [`Dell-5480-6th`](https://github.com/gustavx404/Dell-5480-6th) · 1 star
 <!-- PROFILE_METRICS_END -->
 
-![Profile views](https://komarev.com/ghpvc/?username=gustavx404&label=Views&color=795611&style=flat)
-
 [View commit history](https://github.com/gustavx404/Gustavx404/commits/main/)
 
 ## `~/projects`
@@ -35,3 +33,5 @@
 - **[homelab](https://github.com/gustavx404/homelab)** — Self-hosted infrastructure with Docker Compose, Suricata, and CrowdSec.
 - **[backup-omarchy](https://github.com/gustavx404/backup-omarchy)** — Backup and sync for Omarchy with Quickshell, rclone, and systemd.
 - **[atlas-launcher](https://github.com/gustavx404/atlas-launcher)** — Lightweight Java launcher for Android TV 11+ on ARMv7.
+
+![Profile page loads](https://komarev.com/ghpvc/?username=gustavx404&label=Page%20loads&color=795611&style=flat)
